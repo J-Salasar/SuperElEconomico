@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,207 +7,78 @@
     tools:context=".Admin.ActivityPerfilAdmin"
     android:orientation="vertical">
 
+    <EditText
+        android:id="@+id/user2020"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="125dp"
+        android:ems="10"
+        android:hint="Usuario"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.043" />
 
-    <LinearLayout
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/radiusbutton"
+        android:backgroundTint="#000000"
+        android:onClick="agregarusuario"
+        android:text="Agregar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.039" />
 
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:background="#823E24"
-        android:orientation="horizontal"
-        android:padding="10dp">
+    <ListView
+        android:id="@+id/lista2020"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="salir2020"
+        android:text="Salir"
+        android:textColor="#FF0000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977" />
 
-        <ImageView
-            android:id="@+id/imgVolver2"
-            android:layout_width="45dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/ic_baseline_arrow_back_24"
-            android:gravity="center"
-            android:onClick="volverMenuAdmin" />
-
-        <TextView
-            android:layout_width="341dp"
-            android:layout_height="match_parent"
-            android:fontFamily="sans-serif"
-            android:text="Mi Perfil"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-
-
-    </LinearLayout>
-
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:ignore="MissingConstraints">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingStart="30dp"
-            android:paddingEnd="30dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="159dp"
-                android:layout_marginTop="20dp"
-                android:gravity="top"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal" />
-
-                <ImageView
-                    android:id="@+id/imgPadmin"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:onClick="permisos_camara_admin"
-                    app:srcCompat="@drawable/ic_baseline_add_a_photo_24" />
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:text="@string/nombrePerfil"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textColor="#000000"
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/txtRNombreAdmin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:backgroundTint="@color/cardview_shadow_start_color"
-                android:ems="10"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:textColor="#000000"
-                tools:ignore="LabelFor,SpeakableTextPresentCheck" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:text="@string/apellidod"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textColor="#000000"
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/txtRApellidoAdmin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:backgroundTint="@color/cardview_shadow_start_color"
-                android:inputType="textPersonName"
-                android:textColor="#000000"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:text="@string/telefonoPerfil"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textColor="#000000"
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/txtRTelefonoAdmin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:backgroundTint="@color/cardview_shadow_start_color"
-                android:ems="10"
-                android:inputType="phone"
-                android:maxLength="8"
-                android:textColor="#000000"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/correo_electronicov"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/txtRCorreoAdmin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:ems="10"
-                android:inputType="textEmailAddress" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Contraseña"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/txtRClaveAdmin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:ems="10"
-                android:inputType="textPassword" />
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:text="Usuario"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textColor="#000000"
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/txtRUsuarioAdmin"
-                android:layout_width="match_parent"
-                android:layout_height="57dp"
-                android:layout_marginTop="5dp"
-                android:backgroundTint="@color/cardview_shadow_start_color"
-                android:inputType="textImeMultiLine"
-                android:singleLine="true"
-                android:textColor="#000000"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-
-            <Button
-                android:id="@+id/btnModificarAdmin"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/radiusbutton"
-                android:text="Actualizar Datos"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="200dp" />
-
-        </LinearLayout>
-
-    </ScrollView>
-
-
-</LinearLayout>
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:text="Administradores"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977" />
+</androidx.constraintlayout.widget.ConstraintLayout>

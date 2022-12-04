@@ -28,6 +28,7 @@ import com.example.supermercado.ActivityProductos;
 import com.example.supermercado.ActivityVerCarrito;
 import com.example.supermercado.MainActivity;
 import com.example.supermercado.R;
+import com.example.supermercado.Repartidor.ActivityPerfilRepartidor;
 import com.example.supermercado.configuracion.validar_sesion;
 
 import org.json.JSONArray;
@@ -131,10 +132,10 @@ public class ActivityAdministrador extends AppCompatActivity {
         startActivity(intent);
     }
     public void crear_repartidor(View view){
-        /*Intent intent=new Intent(this, ActivityRegistrarRepartidor.class);
+        Intent intent=new Intent(this, ActivityPerfilRepartidor.class);
         intent.putExtra("user",getIntent().getStringExtra("user"));
         intent.putExtra("rango",getIntent().getStringExtra("rango"));
-        startActivity(intent);*/
+        startActivity(intent);
     }
     public void lista_pedidos(View view){
         Intent intent=new Intent(this,ActivityListadoPedidos.class);
@@ -143,10 +144,10 @@ public class ActivityAdministrador extends AppCompatActivity {
         startActivity(intent);
     }
     public void crear_admin(View view){
-        /*Intent intent=new Intent(this,ActivityListadoPedidos.class);
+        Intent intent=new Intent(this,ActivityPerfilAdmin.class);
         intent.putExtra("user",getIntent().getStringExtra("user"));
         intent.putExtra("rango",getIntent().getStringExtra("rango"));
-        startActivity(intent);*/
+        startActivity(intent);
     }
     public void historial_pedidos_clientes(View view){
         Intent intent=new Intent(this, ActivityHistorialPedidoClientes.class);

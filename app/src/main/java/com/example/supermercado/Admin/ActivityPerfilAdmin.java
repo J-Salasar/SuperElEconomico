@@ -17,75 +17,126 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.supermercado.ActivityEliminar;
 import com.example.supermercado.R;
+import com.example.supermercado.Repartidor.AdaptadorAdmin;
+import com.example.supermercado.Repartidor.AdaptadorCarrito;
+import com.example.supermercado.configuracion.carrito;
+import com.example.supermercado.configuracion.validar_sesion;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ActivityPerfilAdmin extends AppCompatActivity {
-    public EditText edtNombre,edtApellido,edtTelefono,edtCorreo,edtClave,edtUsuario;
-    public ImageView edtImagen;
-    private static final int REQUESTCODECAMARA=100;
-    private static final int REQUESTTAKEFOTO=101;
-    private String currentPhotoPath;
-    @SuppressLint("MissingInflatedId")
-    @RequiresApi(api = Build.VERSION_CODES.O)
+    private ArrayList<validar_sesion> productoslista;
+    private ArrayList<String> nombre;
+    private ArrayList<String> userdb;
+    private ArrayList<String> foto;
+    private ListView lista;
+    private EditText user;
+    private String usuario,rango,rangouser="Administrador";;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_admin);
-
-        edtNombre=(EditText) findViewById(R.id.txtRNombreAdmin);
-        edtApellido=(EditText) findViewById(R.id.txtRApellidoAdmin);
-        edtTelefono=(EditText) findViewById(R.id.txtRTelefonoAdmin);
-        edtCorreo=(EditText) findViewById(R.id.txtRCorreoAdmin);
-        edtClave=(EditText) findViewById(R.id.txtRClaveAdmin);
-        edtUsuario=(EditText) findViewById(R.id.txtRUsuarioAdmin);
-        edtImagen=(ImageView) findViewById(R.id.imgPadmin);
-        edtNombre.setEnabled(false);
-        edtApellido.setEnabled(false);
-        edtCorreo.setEnabled(false);
-        edtUsuario.setEnabled(false);
-
+        lista=(ListView) findViewById(R.id.lista2020);
+        user=(EditText) findViewById(R.id.user2020);
+        usuario=getIntent().getStringExtra("user");
+        rango=getIntent().getStringExtra("rango");
+        ObtenerLista1();
     }
-
-
-
-    public void volverMenuAdmin(View view)
-    {
-        startActivity(new Intent(ActivityPerfilAdmin.this,ActivityAdministrador.class));
+    public void salir2020(View view){
+        Intent intent=new Intent(this,ActivityAdministrador.class);
+        intent.putExtra("user",getIntent().getStringExtra("user"));
+        intent.putExtra("rango",getIntent().getStringExtra("rango"));
+        startActivity(intent);
     }
-
-    public void dispatchTakePictureIntent() {
-        Intent takePictureIntent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if(takePictureIntent.resolveActivity(getPackageManager())!=null) {
-            startActivityForResult(takePictureIntent, REQUESTTAKEFOTO);
-        }
-    }
-
-    public void permisos_camara_admin(View view) {
-        if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, REQUESTCODECAMARA);
-        }
-        else {
-            dispatchTakePictureIntent();
-        }
-    }
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == REQUESTCODECAMARA) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                dispatchTakePictureIntent();
+    private void ObtenerLista1() {
+        StringRequest stringRequest=new StringRequest(Request.Method.GET, "http://apk.salasar.xyz:25565/usuarios_admin.php?codigo=0123456789", new Response.Listener<String>(){
+            @Override
+            public void onResponse(String response) {
+                try{
+                    JSONObject jsonObject=new JSONObject(response);
+                    JSONArray contactoarray=jsonObject.getJSONArray("usuarios");
+                    validar_sesion comida=null;
+                    productoslista=new ArrayList<validar_sesion>();
+                    for(int i=0;i<contactoarray.length();i++){
+                        JSONObject rowcontacto=contactoarray.getJSONObject(i);
+                        comida=new validar_sesion(
+                                rowcontacto.getString("nombre")+" "+rowcontacto.getString("apellido"),
+                                rowcontacto.getString("usuario"),
+                                rowcontacto.getString("foto")
+                        );
+                        productoslista.add(comida);
+                    }
+                    fllList();
+                }
+                catch (Throwable error){
+                }
             }
-            else {
-                Toast.makeText(getApplicationContext(), "Permiso Denegado", Toast.LENGTH_LONG).show();
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
             }
-        }
+        });
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
     }
-    public boolean onKeyDown(int keyCode, KeyEvent event){
-        if(keyCode== KeyEvent.KEYCODE_BACK) {
-            finishAffinity();
+    private void fllList() {
+        nombre=new ArrayList<String>();
+        userdb=new ArrayList<String>();
+        foto=new ArrayList<String>();
+        for(int i=0;i<productoslista.size();i++){
+            nombre.add(
+                    productoslista.get(i).getValidar()
+            );
+            userdb.add(
+                    productoslista.get(i).getEstado()
+            );
+            foto.add(
+                    productoslista.get(i).getRango()
+            );
         }
-        return super.onKeyDown(keyCode,event);
+        lista.setAdapter(new AdaptadorAdmin(this,nombre,userdb,foto,usuario,rango,rangouser));
     }
-
+    public void agregarusuario(View view){
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://apk.salasar.xyz:25565/agregar_admin.php", new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(getApplicationContext(), "Agregado", Toast.LENGTH_LONG).show();
+                Intent intent=new Intent(getApplicationContext(), ActivityEliminar.class);
+                intent.putExtra("user",usuario);
+                intent.putExtra("rango",rango);
+                intent.putExtra("rangouser", rangouser);
+                startActivity(intent);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
+            }
+        }) {
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> parametros = new HashMap<String, String>();
+                parametros.put("usuario", user.getText().toString());
+                return parametros;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+    }
 }

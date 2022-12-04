@@ -58,30 +58,8 @@ public class ActivityVerCarrito extends AppCompatActivity {
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                eliminar_producto(id.get(i));
             }
         });
-    }
-    public void eliminar_producto(String dato){
-        StringRequest stringRequest=new StringRequest(Request.Method.POST, "http://apk.salasar.xyz:25565/eliminar_producto.php", new Response.Listener<String>(){
-            @Override
-            public void onResponse(String response) {
-                Toast.makeText(getApplicationContext(),"Producto eliminado",Toast.LENGTH_SHORT).show();
-                pago();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-            }
-        }){
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> parametros = new HashMap<String, String>();
-                parametros.put("id", dato);
-                return parametros;
-            }
-        };
-        RequestQueue requestQueue= Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
     }
     private void ObtenerLista1() {
         StringRequest stringRequest=new StringRequest(Request.Method.GET, "http://apk.salasar.xyz:25565/ver_carrito.php?codigo=0123456789", new Response.Listener<String>(){
@@ -146,7 +124,7 @@ public class ActivityVerCarrito extends AppCompatActivity {
                     productoslista.get(i).getCantidad_actual()
             );
         }
-        lista.setAdapter(new AdaptadorCarrito(this,id,nombre,precio,cantidad,foto,cantidad_actual));
+        lista.setAdapter(new AdaptadorCarrito(this,id,nombre,precio,cantidad,foto,cantidad_actual,usuario,rango,dinero));
     }
     public void volver80(View view){
         if(rango.equals("Usuario")) {
