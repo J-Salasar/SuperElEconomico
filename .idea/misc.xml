@@ -11,14 +11,21 @@
         <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_administrador.xml" value="0.33" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_agregar_carrito.xml" value="0.3111111111111111" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_categoria.xml" value="0.28888888888888886" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_crear_producto.xml" value="0.33" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_dasboardadmin.xml" value="0.28888888888888886" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_detalle_pedido_admin.xml" value="0.33" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_detalle_pedido_historial_admin.xml" value="0.3111111111111111" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_detalle_pedidos.xml" value="0.33" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_envios.xml" value="0.3111111111111111" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_historial_pedido.xml" value="0.28888888888888886" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_historial_pedido_clientes.xml" value="0.3111111111111111" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_iniciar.xml" value="0.33" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_integrantes.xml" value="0.28888888888888886" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_listado_pedidos.xml" value="0.28888888888888886" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_inventario.xml" value="0.3111111111111111" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_listado_pedidos.xml" value="0.33" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_mis_pedidos.xml" value="0.3111111111111111" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_modificar_inventario.xml" value="0.33" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_pago.xml" value="0.3111111111111111" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_perfil_admin.xml" value="0.28888888888888886" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_perfil_repartidor.xml" value="0.3111111111111111" />
@@ -32,6 +39,7 @@
         <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_repartidor2.xml" value="0.3111111111111111" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_repartidor_envio.xml" value="0.3111111111111111" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_restablecer.xml" value="0.28888888888888886" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_ubicacion_cliente.xml" value="0.3111111111111111" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/activity_ver_carrito.xml" value="0.33" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/SuperMercado1/app/src/main/res/layout/elemento_lista.xml" value="0.33" />
       </map>

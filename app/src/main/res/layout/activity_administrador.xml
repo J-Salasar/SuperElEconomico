@@ -304,6 +304,45 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnAdmin90"
+                    android:layout_width="40dp"
+                    android:layout_height="100dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="8"
+                    android:layout_margin="12dp"
+                    android:onClick="onClickProductos"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="112dp"
+                        android:gravity="center"
+                        android:onClick="historial_pedidos_clientes"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+
+                        <TextView
+                            android:layout_width="224dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:onClick="historial_pedidos_clientes"
+                            android:text="Historial Pedidos Cliente"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="25dp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/_124822_cellphone_mobile_phone_mobile_shopping_mobile_store_shopping_app_113913" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
 
             </GridLayout>
 

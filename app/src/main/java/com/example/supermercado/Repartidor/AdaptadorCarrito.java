@@ -2,6 +2,8 @@ package com.example.supermercado.Repartidor;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +32,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -68,9 +71,9 @@ public class AdaptadorCarrito extends BaseAdapter {
         txtnombre.setText(nombre.get(i));
         txtprecio.setText("L. " +precio.get(i));
         txtcantidad.setText("Cantidad: "+cantidad.get(i));
-        /*byte[] bytes= Base64.getDecoder().decode(fotos.get(i));
+        byte[] bytes= Base64.getDecoder().decode(fotos.get(i));
         Bitmap bitmap= BitmapFactory.decodeByteArray(bytes,0,bytes.length);
-        foto.setImageBitmap(bitmap);*/
+        foto.setImageBitmap(bitmap);
         foto.setTag(i);
         foto.setOnClickListener(new View.OnClickListener() {
             @Override

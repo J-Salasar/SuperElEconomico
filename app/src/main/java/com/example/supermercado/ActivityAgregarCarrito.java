@@ -72,9 +72,9 @@ public class ActivityAgregarCarrito extends AppCompatActivity {
                 }
             }
         });
-        /*byte[] bytes= Base64.getDecoder().decode(getIntent().getStringExtra("foto"));
+        byte[] bytes= Base64.getDecoder().decode(getIntent().getStringExtra("foto"));
         Bitmap bitmap= BitmapFactory.decodeByteArray(bytes,0,bytes.length);
-        foto.setImageBitmap(bitmap);*/
+        foto.setImageBitmap(bitmap);
     }
     public void salir(View view){
         Intent intent=new Intent(this,ActivityProductos.class);

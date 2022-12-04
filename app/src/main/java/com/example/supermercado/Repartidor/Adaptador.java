@@ -52,10 +52,10 @@ public class Adaptador extends BaseAdapter {
         txtnombre.setText(nombre.get(i));
         txtprecio.setText("L. " +precio.get(i));
         txtcantidad.setText("Cantidad: "+cantidad.get(i));
-        /*byte[] bytes= Base64.getDecoder().decode(fotos.get(i));
+        byte[] bytes= Base64.getDecoder().decode(fotos.get(i));
         Bitmap bitmap= BitmapFactory.decodeByteArray(bytes,0,bytes.length);
         foto.setImageBitmap(bitmap);
-        foto.setTag(i);*/
+        foto.setTag(i);
         foto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

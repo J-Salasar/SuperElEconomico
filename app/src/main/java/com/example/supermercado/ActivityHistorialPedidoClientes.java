@@ -1,4 +1,4 @@
-package com.example.supermercado.Admin;
+package com.example.supermercado;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,27 +10,22 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.supermercado.ActivityIniciar;
-import com.example.supermercado.Activity_detalle_pedido_admin;
-import com.example.supermercado.R;
-import com.example.supermercado.Repartidor_envio;
+import com.example.supermercado.Admin.ActivityAdministrador;
+import com.example.supermercado.Admin.ActivityDetallePedidos;
 import com.example.supermercado.configuracion.factura;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
-public class ActivityListadoPedidos extends AppCompatActivity {
+public class ActivityHistorialPedidoClientes extends AppCompatActivity {
     private String usuario,rango;
     private ListView lista;
     private ArrayList<factura> facturalista;
@@ -38,15 +33,15 @@ public class ActivityListadoPedidos extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listado_pedidos);
-        lista=(ListView) findViewById(R.id.lista900);
+        setContentView(R.layout.activity_historial_pedido_clientes);
+        lista=(ListView) findViewById(R.id.lista9000);
         usuario=getIntent().getStringExtra("user");
         rango=getIntent().getStringExtra("rango");
         ObtenerLista();
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent=new Intent(getApplicationContext(), Activity_detalle_pedido_admin.class);
+                Intent intent=new Intent(getApplicationContext(), ActivityDetallePedidoHistorialAdmin.class);
                 intent.putExtra("id",facturalista.get(i).getId());
                 intent.putExtra("nombre",facturalista.get(i).getNombre());
                 intent.putExtra("fecha",facturalista.get(i).getFecha());
@@ -59,7 +54,7 @@ public class ActivityListadoPedidos extends AppCompatActivity {
         });
     }
     private void ObtenerLista() {
-        StringRequest stringRequest=new StringRequest(Request.Method.GET, "http://apk.salasar.xyz:25565/factura_admin.php?codigo=0123456789", new Response.Listener<String>(){
+        StringRequest stringRequest=new StringRequest(Request.Method.GET, "http://apk.salasar.xyz:25565/historial_factura_admin.php?codigo=0123456789", new Response.Listener<String>(){
             @Override
             public void onResponse(String response) {
                 try{

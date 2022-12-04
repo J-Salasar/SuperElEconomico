@@ -231,23 +231,9 @@ public class ActivityVerCarrito extends AppCompatActivity {
         intent.putExtra("dinero",dinero);
         startActivity(intent);
     }
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == REQUEST_CODE && grantResults.length > 0) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                ubicacion();
-            } else {
-                Toast.makeText(this, "Permiso denegado", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
     public void permisos_gps3(View view){
         if (total > 0) {
-            if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(ActivityVerCarrito.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE);
-            } else {
-                ubicacion();
-            }
+            ubicacion();
         }
         else{
             Toast.makeText(this,"Agrega algo para comprar",Toast.LENGTH_SHORT).show();

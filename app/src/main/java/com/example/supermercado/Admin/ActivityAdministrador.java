@@ -21,6 +21,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.supermercado.ActivityHistorialPedido;
+import com.example.supermercado.ActivityHistorialPedidoClientes;
+import com.example.supermercado.ActivityInventario;
 import com.example.supermercado.ActivityPerfilUsuario;
 import com.example.supermercado.ActivityProductos;
 import com.example.supermercado.ActivityVerCarrito;
@@ -123,16 +125,16 @@ public class ActivityAdministrador extends AppCompatActivity {
         startActivity(intent);
     }
     public void inventario1(View view){
-        Intent intent=new Intent(this, ActivityNuevoInventario.class);
+        Intent intent=new Intent(this, ActivityInventario.class);
         intent.putExtra("user",getIntent().getStringExtra("user"));
         intent.putExtra("rango",getIntent().getStringExtra("rango"));
         startActivity(intent);
     }
     public void crear_repartidor(View view){
-        Intent intent=new Intent(this, ActivityRegistrarRepartidor.class);
+        /*Intent intent=new Intent(this, ActivityRegistrarRepartidor.class);
         intent.putExtra("user",getIntent().getStringExtra("user"));
         intent.putExtra("rango",getIntent().getStringExtra("rango"));
-        startActivity(intent);
+        startActivity(intent);*/
     }
     public void lista_pedidos(View view){
         Intent intent=new Intent(this,ActivityListadoPedidos.class);
@@ -141,7 +143,13 @@ public class ActivityAdministrador extends AppCompatActivity {
         startActivity(intent);
     }
     public void crear_admin(View view){
-        Intent intent=new Intent(this,ActivityListadoPedidos.class);
+        /*Intent intent=new Intent(this,ActivityListadoPedidos.class);
+        intent.putExtra("user",getIntent().getStringExtra("user"));
+        intent.putExtra("rango",getIntent().getStringExtra("rango"));
+        startActivity(intent);*/
+    }
+    public void historial_pedidos_clientes(View view){
+        Intent intent=new Intent(this, ActivityHistorialPedidoClientes.class);
         intent.putExtra("user",getIntent().getStringExtra("user"));
         intent.putExtra("rango",getIntent().getStringExtra("rango"));
         startActivity(intent);
