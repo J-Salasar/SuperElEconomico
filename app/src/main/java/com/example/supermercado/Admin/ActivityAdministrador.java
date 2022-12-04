@@ -116,10 +116,10 @@ public class ActivityAdministrador extends AppCompatActivity {
         startActivity(intent);
     }
     public void perfil_usuario1(View view){
-        /*Intent intent=new Intent(this, ActivityPerfilUsuario.class);
+        Intent intent=new Intent(this, ActivityPerfilUsuario.class);
         intent.putExtra("user",getIntent().getStringExtra("user"));
         intent.putExtra("rango",getIntent().getStringExtra("rango"));
-        startActivity(intent);*/
+        startActivity(intent);
     }
     public void cerrar1(View view){
         Intent intent=new Intent(this, MainActivity.class);

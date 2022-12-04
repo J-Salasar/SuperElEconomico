@@ -1,8 +1,11 @@
 package com.example.supermercado;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -135,6 +138,38 @@ public class Activity_detalle_pedido_repartidor extends AppCompatActivity {
         };
         RequestQueue requestQueue= Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+    }
+    public void ubicacion111(View view){
+        Intent intent=new Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("google.navigation:q="+latitud+","+longitud+"&mode=d"
+                ));
+        intent.setPackage("com.google.android.apps.maps");
+        if(intent.resolveActivity(getPackageManager())!=null){
+            startActivity(intent);
+        }
+    }
+    public void llamar111(View view){
+        AlertDialog.Builder alerta=new AlertDialog.Builder(Activity_detalle_pedido_repartidor.this);
+        alerta.setMessage("Deseas llamar a: "+getIntent().getStringExtra("nombre"))
+                .setCancelable(false)
+                .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int y) {
+                        Intent callintent=new Intent(Intent.ACTION_DIAL);
+                        callintent.setData(Uri.parse("tel:"+telefono));
+                        startActivity(callintent);
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+        AlertDialog titulo = alerta.create();
+        titulo.setTitle("Llamada");
+        titulo.show();
     }
     public boolean onKeyDown(int keyCode, KeyEvent event){
         return false;
