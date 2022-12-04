@@ -43,7 +43,7 @@ public class ActivityEnvios extends AppCompatActivity {
         nombre=(TextView) findViewById(R.id.nombre_texto50);
         imagen=(ImageView) findViewById(R.id.foto_perfil50);
         dinero=(TextView) findViewById(R.id.dinero_texto50);
-        informacion();
+        informacion();//
     }
     public void informacion(){
         StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://apk.salasar.xyz:25565/pagina_usuario.php", new Response.Listener<String>() {
