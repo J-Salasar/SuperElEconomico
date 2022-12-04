@@ -18,19 +18,19 @@
 
 
         <ImageView
-            android:id="@+id/imgVolver2"
+            android:id="@+id/imgVolver111"
             android:layout_width="45dp"
             android:layout_height="match_parent"
             android:background="@drawable/ic_baseline_arrow_back_24"
             android:gravity="center"
-            android:onClick="volverMenu"
+            android:onClick="volver111"
             tools:ignore="UsingOnClickInXml" />
 
         <TextView
             android:layout_width="341dp"
             android:layout_height="match_parent"
             android:fontFamily="sans-serif"
-            android:text="Mi Perfil"
+            android:text="Privacidad"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="25sp"
@@ -65,7 +65,7 @@
                     android:orientation="horizontal" />
 
                 <ImageView
-                    android:id="@+id/imgRUsersM"
+                    android:id="@+id/imgRUsersM111"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:onClick="permisos_camara_modificar"
@@ -73,44 +73,15 @@
             </LinearLayout>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:id="@+id/nombre111"
+                android:layout_width="350dp"
+                android:layout_height="35dp"
                 android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
                 android:text="@string/nombrePerfil"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="#000000"
                 android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/txtRNombreM"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:backgroundTint="@color/cardview_shadow_start_color"
-                android:ems="10"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:textColor="#000000"
-                tools:ignore="LabelFor,SpeakableTextPresentCheck" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:text="@string/apellidod"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textColor="#000000"
-                android:textSize="16sp" />
-
-            <EditText
-                android:id="@+id/txtRApellidoM"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:backgroundTint="@color/cardview_shadow_start_color"
-                android:inputType="textPersonName"
-                android:textColor="#000000"
-                tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -122,7 +93,7 @@
                 android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/txtRTelefonoM"
+                android:id="@+id/txtRTelefonoM111"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -134,25 +105,18 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
-                android:id="@+id/textView15"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:id="@+id/correo111"
+                android:layout_width="348dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
                 android:text="@string/correo_electronicov"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
-            <EditText
-                android:id="@+id/txtRCorreoM"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:ems="10"
-                android:inputType="textEmailAddress" />
-
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/textView5111"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -171,28 +135,19 @@
 
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:id="@+id/usuario111"
+                android:layout_width="348dp"
+                android:layout_height="37dp"
                 android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
                 android:text="Usuario"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="#000000"
                 android:textSize="16sp" />
 
-            <EditText
-                android:id="@+id/txtRUsuarioM"
-                android:layout_width="match_parent"
-                android:layout_height="57dp"
-                android:layout_marginTop="5dp"
-                android:backgroundTint="@color/cardview_shadow_start_color"
-                android:inputType="textImeMultiLine"
-                android:singleLine="true"
-                android:textColor="#000000"
-                tools:ignore="SpeakableTextPresentCheck" />
-
 
             <Button
-                android:id="@+id/btnModificar"
+                android:id="@+id/btnModificar111"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="15dp"

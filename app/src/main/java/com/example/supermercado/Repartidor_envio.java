@@ -117,7 +117,13 @@ public class Repartidor_envio extends AppCompatActivity {
         startActivity(intent);
     }
     public void entregar50(View view){
-        Intent intent=new Intent(this, ActivityDetallePedidos.class);
+        Intent intent=new Intent(this, ActivityListadoEntrega.class);
+        intent.putExtra("user",getIntent().getStringExtra("user"));
+        intent.putExtra("rango",getIntent().getStringExtra("rango"));
+        startActivity(intent);
+    }
+    public void historialentregar50(View view){
+        Intent intent=new Intent(this, ActivityHistorialRepartidor.class);
         intent.putExtra("user",getIntent().getStringExtra("user"));
         intent.putExtra("rango",getIntent().getStringExtra("rango"));
         startActivity(intent);
