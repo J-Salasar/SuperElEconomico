@@ -25,6 +25,7 @@ import com.example.supermercado.ActivityHistorialPedidoClientes;
 import com.example.supermercado.ActivityInventario;
 import com.example.supermercado.ActivityPerfilUsuario;
 import com.example.supermercado.ActivityProductos;
+import com.example.supermercado.ActivityRecargar;
 import com.example.supermercado.ActivityVerCarrito;
 import com.example.supermercado.MainActivity;
 import com.example.supermercado.R;
@@ -151,6 +152,12 @@ public class ActivityAdministrador extends AppCompatActivity {
     }
     public void historial_pedidos_clientes(View view){
         Intent intent=new Intent(this, ActivityHistorialPedidoClientes.class);
+        intent.putExtra("user",getIntent().getStringExtra("user"));
+        intent.putExtra("rango",getIntent().getStringExtra("rango"));
+        startActivity(intent);
+    }
+    public void recargar(View view){
+        Intent intent=new Intent(this, ActivityRecargar.class);
         intent.putExtra("user",getIntent().getStringExtra("user"));
         intent.putExtra("rango",getIntent().getStringExtra("rango"));
         startActivity(intent);
